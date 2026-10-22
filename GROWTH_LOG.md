@@ -31,3 +31,12 @@ Record every growth-relevant edit here. Keep entries short, factual, and useful 
 - Bing: verification code `301CD5703A43F1E7C0C842C1F1A0A1D4` written to `vars.NEXT_PUBLIC_BING_SITE_AUTH_CODE` by the builder's `configure_bing_pool.py`, so the shared pool build variables stay untouched. Site verified and sitemap feed read back as `Success` from `GetFeeds`.
 - IndexNow: key `public/indexnow-a3a533f6bb1d805c0938ddc9cfa961f3.txt` submitted 14 sitemap URLs; the service returned HTTP 202 with key validation still pending, which is a remote warning, not an indexing result.
 - Deployment note: the first pool rebuild after the GA4 commit failed because an earlier crashed build had left the shared `pilot-deployment-lock` lease held; the lock was left to expire on its own 25-minute lease and the build was retriggered through this site's existing deploy hook. No lock ref was force-edited and no pool was emptied to recover.
+
+### 2026-10-22 — Adsterra integration (adsterra-integrator)
+
+- Task: Request the Adsterra units selected by `ad-placement-manifest.json`, collect their codes, and write them into the placeholders left in `src/data/ads.ts`.
+- URLs affected: none. No route, guide text, title, description, canonical, robots, navigation or ad anchor changed; the 14 routes are identical to the launch baseline.
+- Placement inventory: unchanged — 6 semantic slots and 11 unit keys, backed by 6 distinct platform placements (Banner 728x90 / 468x60 / 320x50 / 160x300, Native Banner, Smartlink). Keys that share a format and size share one platform placement and therefore one code: `page-top-728x90` = `guide-section-break-728x90`, `page-top-468x60` = `home-directory-end-468x60` = `guide-section-break-468x60`, `page-top-320x50` = `home-directory-end-320x50` = `guide-section-break-320x50`. No format or size is mixed across keys.
+- Change: all 11 `src/data/ads.ts` values replaced their empty placeholders with the collected codes. `ad-placement-manifest.json`, the ad components and their positions were read only and are unchanged.
+- Verification: `npm run verify` (typecheck, lint, build) passes; before commit every target value was compared item by item against the collected code evidence for its key.
+- Boundaries: this entry records code placement only. It makes no claim about ad requests, fill, display or revenue, and no Cloudflare build or live ad check was performed as part of this change.
