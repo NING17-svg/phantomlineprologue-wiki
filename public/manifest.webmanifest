@@ -1,0 +1,20 @@
+{
+  "name": "Phantom Line: Prologue Wiki",
+  "short_name": "PL Prologue",
+  "description": "Field guides for Phantom Line: Prologue: husks, anomaly containment, island survival and co-op squads.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b0c0e",
+  "theme_color": "#0b0c0e",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

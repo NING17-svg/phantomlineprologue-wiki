@@ -1,0 +1,142 @@
+[
+  {
+    "id": "home",
+    "translationKey": "home",
+    "locale": "en-US",
+    "routeKind": "home",
+    "url": "/",
+    "alternates": {
+      "en-US": "/"
+    }
+  },
+  {
+    "id": "about",
+    "translationKey": "about",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/about",
+    "alternates": {
+      "en-US": "/about"
+    }
+  },
+  {
+    "id": "contact",
+    "translationKey": "contact",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/contact",
+    "alternates": {
+      "en-US": "/contact"
+    }
+  },
+  {
+    "id": "anomaly-pockets",
+    "translationKey": "anomaly-pockets",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/anomaly-pockets",
+    "alternates": {
+      "en-US": "/guides/anomaly-pockets"
+    }
+  },
+  {
+    "id": "co-op-play",
+    "translationKey": "co-op-play",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/co-op-play",
+    "alternates": {
+      "en-US": "/guides/co-op-play"
+    }
+  },
+  {
+    "id": "containing-anomalies",
+    "translationKey": "containing-anomalies",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/containing-anomalies",
+    "alternates": {
+      "en-US": "/guides/containing-anomalies"
+    }
+  },
+  {
+    "id": "dynamic-events",
+    "translationKey": "dynamic-events",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/dynamic-events",
+    "alternates": {
+      "en-US": "/guides/dynamic-events"
+    }
+  },
+  {
+    "id": "fire-modes",
+    "translationKey": "fire-modes",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/fire-modes",
+    "alternates": {
+      "en-US": "/guides/fire-modes"
+    }
+  },
+  {
+    "id": "husk-system",
+    "translationKey": "husk-system",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/husk-system",
+    "alternates": {
+      "en-US": "/guides/husk-system"
+    }
+  },
+  {
+    "id": "prologue-walkthrough",
+    "translationKey": "prologue-walkthrough",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/prologue-walkthrough",
+    "alternates": {
+      "en-US": "/guides/prologue-walkthrough"
+    }
+  },
+  {
+    "id": "quintessence-upgrades",
+    "translationKey": "quintessence-upgrades",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/quintessence-upgrades",
+    "alternates": {
+      "en-US": "/guides/quintessence-upgrades"
+    }
+  },
+  {
+    "id": "survival-and-hazards",
+    "translationKey": "survival-and-hazards",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/guides/survival-and-hazards",
+    "alternates": {
+      "en-US": "/guides/survival-and-hazards"
+    }
+  },
+  {
+    "id": "privacy-policy",
+    "translationKey": "privacy-policy",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/privacy-policy",
+    "alternates": {
+      "en-US": "/privacy-policy"
+    }
+  },
+  {
+    "id": "terms",
+    "translationKey": "terms",
+    "locale": "en-US",
+    "routeKind": "fixed",
+    "url": "/terms",
+    "alternates": {
+      "en-US": "/terms"
+    }
+  }
+]

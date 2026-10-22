@@ -1,0 +1,227 @@
+/*
+ * Phantom Line: Prologue — site-local skin.
+ *
+ * The template's v4 stylesheets supply the layout; this file supplies the game's
+ * visual identity: a mono uppercase label voice for every small structural
+ * label, a rift-red glow behind the opening, and dark-surface tuning for tables
+ * and the right rail. Loaded last so it overrides rather than fights.
+ */
+
+.site-theme {
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  --label-tracking: 0.16em;
+  --rift-glow: 0.12;
+}
+
+/* ---------------------------------------------------------------- labels -- */
+/* Eyebrows, badges, step numbers and fact labels read as a tactical terminal. */
+
+.site-theme .eyebrow,
+.site-theme .module-badge,
+.site-theme .key-fact dt,
+.site-theme .step-number,
+.site-theme .v4-guide-index__label,
+.site-theme .right-rail h2,
+.site-theme .page-review,
+.site-theme .v4-step-caption {
+  font-family: var(--font-mono);
+}
+
+.site-theme .eyebrow {
+  margin: 0;
+  color: var(--accent-bright);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--label-tracking);
+}
+
+.site-theme .module-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--label-tracking);
+}
+
+.site-theme .key-fact dt {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--label-tracking);
+}
+
+.site-theme .step-number {
+  background: color-mix(in srgb, var(--accent-primary) 18%, transparent);
+  border: var(--border-width) solid color-mix(in srgb, var(--accent-primary) 55%, transparent);
+  color: var(--accent-bright);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+.site-theme .v4-guide-index__group > h3 {
+  color: var(--accent-bright);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--label-tracking);
+}
+
+.site-theme .right-rail h2 {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--label-tracking);
+}
+
+.site-theme .page-review {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------------ head -- */
+
+.site-theme .content-module > h2,
+.site-theme .prose-module > h2 {
+  letter-spacing: -0.025em;
+}
+
+/* The chapter titles are long; keep them readable instead of shrinking hard. */
+.site-theme .home-hero .hero-copy h1 {
+  max-width: 15ch;
+}
+
+/* ------------------------------------------------------------------ hero -- */
+/* A cold near-black field with one rift-red light source behind the copy. */
+
+.site-theme .home-hero[data-variant="visual-cover"] {
+  background:
+    radial-gradient(
+      120% 140% at 88% 0%,
+      color-mix(in srgb, var(--accent-primary) calc(var(--rift-glow) * 100%), transparent) 0%,
+      transparent 58%
+    ),
+    linear-gradient(160deg, var(--surface-2) 0%, var(--surface-1) 62%),
+    var(--surface-1);
+}
+
+.site-theme .content-hero {
+  background:
+    radial-gradient(
+      90% 130% at 92% 10%,
+      color-mix(in srgb, var(--accent-primary) calc(var(--rift-glow) * 70%), transparent) 0%,
+      transparent 60%
+    ),
+    transparent;
+}
+
+.site-theme .hero-media {
+  border: var(--border-width) solid var(--line-strong);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+/* Hold the photography back a little so it never out-shouts the copy. */
+.site-theme .hero-media img {
+  filter: saturate(0.88) contrast(1.04);
+}
+
+.site-theme .hero-media figcaption {
+  background: var(--surface-2);
+  color: var(--text-muted);
+}
+
+/* ---------------------------------------------------------------- tables -- */
+/* Zebra striping in the template is too light for a near-black page. */
+
+.site-theme .data-table th {
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.site-theme .data-table td {
+  color: var(--text-primary);
+}
+
+.site-theme .data-table tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--surface-2) 70%, transparent);
+}
+
+.site-theme .data-table tbody tr:hover td {
+  background: color-mix(in srgb, var(--accent-primary) 9%, var(--surface-1));
+}
+
+.site-theme .table-scroll {
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius);
+}
+
+/* ------------------------------------------------------------------ rail -- */
+
+.site-theme .right-rail {
+  font-size: 13px;
+}
+
+/* The rail is 245px; a 120px label column would leave the value ~110px and
+   wrap every entry. Stack label over value instead. */
+.site-theme .right-rail .key-fact {
+  grid-template-columns: 1fr;
+  gap: 2px;
+  padding: 9px 0;
+}
+
+.site-theme .right-rail .key-fact dd {
+  color: var(--text-primary);
+}
+
+.site-theme .right-rail .rail-links a {
+  color: var(--text-muted);
+  border-bottom: 1px solid transparent;
+}
+
+.site-theme .right-rail .rail-links a:hover {
+  color: var(--text-link);
+  border-bottom-color: color-mix(in srgb, var(--text-link) 45%, transparent);
+}
+
+/* --------------------------------------------------------------- buttons -- */
+
+.site-theme .btn {
+  border-radius: var(--radius);
+  font-weight: 650;
+}
+
+.site-theme .btn-primary:hover {
+  background: color-mix(in srgb, var(--accent-primary) 86%, var(--accent-bright));
+}
+
+.site-theme a {
+  text-underline-offset: 3px;
+}
+
+/* The answer text carries the next-step links; make them scannable. */
+.site-theme .rich-text a {
+  color: var(--text-link);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--text-link) 45%, transparent);
+}
+
+.site-theme .rich-text a:hover {
+  text-decoration-color: var(--text-link);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent-primary) 45%, transparent);
+  color: var(--text-primary);
+}
